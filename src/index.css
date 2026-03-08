@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-coffee: #4B2E2B;
+  --color-cream: #F5E6D3;
+  --color-caramel: #C68E17;
+  --color-coffee-light: #6B443F;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Poppins', sans-serif;
+}
+
+@layer utilities {
+  .bg-coffee-pattern {
+    background-color: var(--color-cream);
+    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC7e4CkP17DY5jamlOYsQ-d7tYh4kv3ahBmHyOWo-plftnpEpm20RdI6QoJVzhvG_XHMoIuqnbRijMETAob6nPJ2F0goh0aXMNZYELTSJ9uMMh78bRMnQQp6QsAdCMq1fVfIDrP_sOBZQYW0lvFGIcnr2c8xwNGv-Z0v5Cy6NXrN7mOMBLbaJxfFRVAod3pc7tIghfg49i100FK_cGsX5ZBgaN1qkFwImljZQlmXDPSD7OHTLcO-Ni2LhG86SXKdjohN3nQTmyXDVE');
+    position: relative;
+  }
+  .bg-coffee-pattern::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDHlmrfDMwGvpedCSWcLeeh0QjdTfTTqMSuJPLs0mQWcApJZy9Vnis5abugj3HPcbiFoiYtVIDCTKqdbs-cJ87Ek4WLUX7beT8PeviiVS8PjCQuac4R616Zy7LBgk8hSZI-v3Ah8usV_3jeR3oHFvWiOXYgCx59lTp7lK2U35LD9l1lziXcGJB4FWJOMALSjmk01L4FHzNfcTjbM8seRD7HXM2rMHsUQUFkxUg9Nuo93u_L-ajJrSxJxsXcECxRRbceM-iHxsGIANo');
+    opacity: 0.05;
+    pointer-events: none;
+  }
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(75, 46, 43, 0.2);
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-coffee);
+  background-color: var(--color-cream);
+}
